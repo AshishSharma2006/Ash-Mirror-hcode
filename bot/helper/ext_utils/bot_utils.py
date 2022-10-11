@@ -117,14 +117,14 @@ def get_progress_bar_string(status):
     p = 0 if total == 0 else round(completed * 100 / total)
     p = min(max(p, 0), 100)
     cFull = p // 8
-    p_str = '⬢' * cFull
-    p_str += '⬡' * (12 - cFull)
+    p_str = '❤' * cFull
+    p_str += '🖤' * (12 - cFull)
     p_str = f"[{p_str}]"
     return p_str
 
 def progress_bar(percentage):
-    p_used = '⬢'
-    p_total = '⬡'
+    p_used = '❤'
+    p_total = '🤍'
     if isinstance(percentage, str):
         return '-'
     try:
@@ -163,11 +163,11 @@ T: {disk_t} | F: {disk_f}
 Working For: {currentTime}
 T-DL: {recv} | T-UL: {sent}
 
-Made with ❤️ by Dawn
+Made with ❤️ by Ashish Sharma
 """
 
 #---Thanks for deleting my name ❤️ Appreciate it---#
-#---Remove this line too, who cares---#
+#---All Credit Of this repo is to dawn---#
 
 dispatcher.add_handler(CallbackQueryHandler(pop_up_stats, pattern=f"^{str(THREE)}$"))
 
