@@ -61,7 +61,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
         sendMarkup('Sorry, You cannot use me here! join my public group for below @Ashish_Leech_Group ❤.', context.bot, update.message, reply_markup)
 
 def restart(update, context):
-    restart_message = sendMessage("Wait brb...❤🖤", context.bot, update.message)
+    restart_message = sendMessage("Will Miss you Soo Much...❤🖤", context.bot, update.message)
     if Interval:
         Interval[0].cancel()
         Interval.clear()
@@ -220,12 +220,12 @@ def main():
     if ospath.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("my Love ❤🖤, Missed you..", chat_id, msg_id)
+        bot.edit_message_text("My Love ❤🖤, Missed you..", chat_id, msg_id)
         osremove(".restartmsg")
     elif not notifier_dict and AUTHORIZED_CHATS:
         for id_ in AUTHORIZED_CHATS:
             try:
-                bot.sendMessage(id_, "i'm back my love ❤🖤", 'HTML')
+                bot.sendMessage(id_, "I'm back my love, Missed You❤🖤", 'HTML')
             except Exception as e:
                 LOGGER.error(e)
 
@@ -246,7 +246,7 @@ def main():
     dispatcher.add_handler(stats_handler)
     dispatcher.add_handler(log_handler)
     updater.start_polling(drop_pending_updates=IGNORE_PENDING_REQUESTS)
-    LOGGER.info("i'm back my love ❤🖤")
+    LOGGER.info("I'm back my love, Missed You ❤🖤")
     signal(SIGINT, exit_clean_up)
 
 app.start()
