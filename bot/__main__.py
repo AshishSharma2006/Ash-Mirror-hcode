@@ -48,22 +48,20 @@ def stats(update, context):
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("Report Group", "https://t.me/Mltb_chat_unofficial")
-    buttons.buildbutton("Repo", "https://github.com/Dawn-India/Z-Mirror")
-    buttons.buildbutton("Mirror Group", "https://t.me/z_mirror")
-    buttons.buildbutton("Owner", "https://t.me/z_mirror")
+    buttons.buildbutton("Leech/Mirror Group 🖤", "https://t.me/ashish_leech_group")
+    buttons.buildbutton("Owner ❤", "https://t.me/ashishsharmalegend")
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-Welcome | {TITLE_NAME} BOT is ready for you
+Welcome | {TITLE_NAME} Hi, I am ready for you my love ❤🖤
 Type /{BotCommands.HelpCommand} to get a list of available commands
                         '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('Sorry, You cannot use me! Make your own.', context.bot, update.message, reply_markup)
+        sendMarkup('Sorry, You cannot use me here! join my public group for below @Ashish_Leech_Group ❤.', context.bot, update.message, reply_markup)
 
 def restart(update, context):
-    restart_message = sendMessage("Restarting...", context.bot, update.message)
+    restart_message = sendMessage("Wait brb...❤🖤", context.bot, update.message)
     if Interval:
         Interval[0].cancel()
         Interval.clear()
@@ -78,7 +76,7 @@ def restart(update, context):
 
 def ping(update, context):
     start_time = int(round(time() * 1000))
-    reply = sendMessage("Starting Ping", context.bot, update.message)
+    reply = sendMessage("Ping Dekhoge", context.bot, update.message)
     end_time = int(round(time() * 1000))
     editMessage(f'{end_time - start_time} ms', reply)
 
@@ -222,12 +220,12 @@ def main():
     if ospath.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("Restarted Successfully!", chat_id, msg_id)
+        bot.edit_message_text("my Love ❤🖤, Missed you..", chat_id, msg_id)
         osremove(".restartmsg")
     elif not notifier_dict and AUTHORIZED_CHATS:
         for id_ in AUTHORIZED_CHATS:
             try:
-                bot.sendMessage(id_, "Bot Restarted!", 'HTML')
+                bot.sendMessage(id_, "i'm back my love ❤🖤", 'HTML')
             except Exception as e:
                 LOGGER.error(e)
 
@@ -248,7 +246,7 @@ def main():
     dispatcher.add_handler(stats_handler)
     dispatcher.add_handler(log_handler)
     updater.start_polling(drop_pending_updates=IGNORE_PENDING_REQUESTS)
-    LOGGER.info("Congratulations, Bot Started Sucessfully !")
+    LOGGER.info("i'm back my love ❤🖤")
     signal(SIGINT, exit_clean_up)
 
 app.start()
